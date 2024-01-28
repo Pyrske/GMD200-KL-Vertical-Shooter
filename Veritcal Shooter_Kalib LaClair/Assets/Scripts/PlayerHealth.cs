@@ -6,7 +6,7 @@ using UnityEngine;
 public static class PlayerHealth
 {
     public static event Action<int> healthChanged;
-    private static int _health = 6;
+    private static int _health = 10;
 
 
     public static int GetHealth()
@@ -22,5 +22,10 @@ public static class PlayerHealth
         }
         _health = health;
         healthChanged?.Invoke(health);
+    }
+
+    public static void Damage()
+    {
+        SetHealth(_health - 1);
     }
 }

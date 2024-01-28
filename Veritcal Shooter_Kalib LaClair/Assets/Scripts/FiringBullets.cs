@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class FiringBullets : MonoBehaviour
 {
-    [SerializeField] private Transform spawnLocation;
 
     [SerializeField] private GameObject bulletPrefab;
+    private AudioSource sound;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        sound = GetComponent<AudioSource>();
     }
+
 
     // Update is called once per frame
     void Update()
@@ -21,10 +20,11 @@ public class FiringBullets : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Fire();
+            sound.PlayOneShot(sound.clip);
         }
     }
     private void Fire()
     {
-        Instantiate(bulletPrefab, spawnLocation.position, spawnLocation.rotation);
+        Instantiate(bulletPrefab, transform.position, transform.rotation);
     }
 }

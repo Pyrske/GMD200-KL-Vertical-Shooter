@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private float respawnX;
-    [SerializeField] private float respawnY = 1;
+    [SerializeField] private float respawnY;
     [SerializeField] private GameObject poofCloudPrefab;
     private Rigidbody2D _rigidbody2D;
 
@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         respawnX = transform.position.x;
+        respawnY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Despawn();
+            Destroy(other.gameObject);
         }
     }
 

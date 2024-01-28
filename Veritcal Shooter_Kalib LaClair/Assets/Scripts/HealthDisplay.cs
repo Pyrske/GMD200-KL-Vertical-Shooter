@@ -20,7 +20,6 @@ public class HealthDisplay : MonoBehaviour
 
     private void OnHealthChanged(int health)
     {
-        Debug.Log("Health: " + health);
         for (int i = 0; i < shipImages.Length; i++)
         {
             shipImages[i].fillAmount = (health - i * numSegments) / (float) numSegments;

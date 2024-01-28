@@ -8,7 +8,7 @@ public class ShipRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float rotate = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+        float rotate = Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
         transform.Rotate(0, 0, -rotate);
     }
 }

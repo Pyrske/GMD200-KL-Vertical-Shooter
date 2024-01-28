@@ -22,6 +22,7 @@ public class Bullet : MonoBehaviour
         if (life >= bulletLife)
         {
             Destroy(gameObject);
+            PlayerHealth.Damage();
         }
     }
 }
