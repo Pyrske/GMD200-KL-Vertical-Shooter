@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7422101305639448083}
   - component: {fileID: 1658972739662838000}
   - component: {fileID: 2631570909617418233}
-  - component: {fileID: -5381337339685668107}
+  - component: {fileID: 9171015502790472901}
   m_Layer: 0
   m_Name: PoofCloud
   m_TagString: Untagged
@@ -107,7 +107,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-5381337339685668107
+--- !u!114 &9171015502790472901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

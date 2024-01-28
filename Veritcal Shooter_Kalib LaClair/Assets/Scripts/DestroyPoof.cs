@@ -4,18 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public static class ShipHealth
+public class Explosion : MonoBehaviour
 {
-    public static event Action<int> healthChanged;
-    private static int _health;
-    public static void SetHealth(int health)
+    public void Remove()
     {
-        if (health == _health)
-        {
-            return;
-        }
-        _health = health;
-        healthChanged?.Invoke(health);
+        Destroy(gameObject);
     }
-
 }
