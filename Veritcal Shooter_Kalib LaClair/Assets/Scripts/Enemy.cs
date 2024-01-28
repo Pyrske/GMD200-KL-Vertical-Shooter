@@ -6,7 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private float respawnX;
     [SerializeField] private float respawnY = 1;
-
+    [SerializeField] private GameObject poofCloudPrefab;
     private Rigidbody2D _rigidbody2D;
 
     private void Awake()
@@ -26,5 +26,20 @@ public class Enemy : MonoBehaviour
         gameObject.SetActive(true);
         transform.position = new Vector2(respawnX,respawnY);
         _rigidbody2D.velocity = Vector2.zero;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            Despawn();
+        }
+    }
+
+    private void Despawn()
+    {
+        gameObject.SetActive(false);
+        GameManager.Instance.UnlistEnemy(gameObject);
+        Instantiate(poofCloudPrefab, transform.position, transform.rotation);
     }
 }
