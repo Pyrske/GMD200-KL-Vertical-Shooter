@@ -192,4 +192,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  bulletLife: 1
+  bulletLife: 0.75
