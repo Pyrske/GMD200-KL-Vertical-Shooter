@@ -4,18 +4,32 @@ using UnityEngine;
 
 public class ShipHealth : MonoBehaviour
 {
-    Animator _animator;
+    private Animator _animator;
+    private AudioSource _damageNoise;
+    [SerializeField] private SceneManagement _sceneManagement;
     private void Start()
     {
-        _animator = gameObject.GetComponent<Animator>();
-        PlayerHealth.healthChanged += PlayDamageAnimation;
+        _animator = GetComponent<Animator>();
+        _damageNoise = GetComponent<AudioSource>();
+        PlayerHealth.healthChanged += TakeDamage;
+        PlayerHealth.healthChanged += Die;
     }
-    private void PlayDamageAnimation(int _)
+    private void TakeDamage(int _)
     {
         _animator.SetTrigger("TakeDamage");
+        _damageNoise.PlayOneShot(_damageNoise.clip);
     }
     private void OnDisable()
     {
-        PlayerHealth.healthChanged -= PlayDamageAnimation;
+        PlayerHealth.healthChanged -= TakeDamage;
+        PlayerHealth.healthChanged -= Die;
+    }
+    private void Die(int health)
+    {
+        if (health <= 0)
+        {
+            PlayerHealth.SetHealth(10);
+            _sceneManagement.ChangeScene(2);
+        }
     }
 }
