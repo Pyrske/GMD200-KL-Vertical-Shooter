@@ -28,7 +28,6 @@ public class ShipHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            PlayerHealth.SetHealth(10);
             _sceneManagement.ChangeScene(2);
         }
     }
