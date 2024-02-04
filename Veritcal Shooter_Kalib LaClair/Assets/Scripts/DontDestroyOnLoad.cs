@@ -18,7 +18,6 @@ public class DontDestroyOnLoad : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         int index = SceneManager.GetActiveScene().buildIndex;
-        Debug.Log(index);
         if (index == 1)
         {
             Destroy(gameObject);

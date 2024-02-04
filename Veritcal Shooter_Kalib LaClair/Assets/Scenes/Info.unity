@@ -500,10 +500,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1807573507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 750, y: 400}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -281.5}
+  m_SizeDelta: {x: 778, y: 513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434873577
 MonoBehaviour:
@@ -538,7 +538,15 @@ MonoBehaviour:
 
 
     See what the best score you can get is! Have fun and good
-    luck!'
+    luck!
+
+
+
+    Controls:
+
+    - L/R Arrow keys to rotate
+
+    - Space to shoot'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6ca167317958e33498fae5197f96f549, type: 2}
   m_sharedMaterial: {fileID: 7186812732037057126, guid: 6ca167317958e33498fae5197f96f549, type: 2}
@@ -755,7 +763,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 86}
-  m_SizeDelta: {x: 300, y: 75}
+  m_SizeDelta: {x: 320, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1851403361
 MonoBehaviour:
